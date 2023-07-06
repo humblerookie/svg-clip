@@ -1,0 +1,20 @@
+name: svg_clip
+description: A flutter package that allows to use an SVG as a clip path
+version: 0.0.1
+homepage: https://anvith.dev
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  path_drawing: ^1.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
