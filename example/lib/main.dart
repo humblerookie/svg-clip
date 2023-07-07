@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:svg_clip/svg_clip.dart';
 
 void main() {
@@ -50,22 +51,62 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgClip(
-                asset: ClipAsset.local(path: _getAssetPath(1)),
-                child: const _ColoredBox(
-                    color: Colors.green, width: 300, height: 100)),
-            const SizedBox(
-              height: 50,
-            ),
-            SvgClip(
-                asset: ClipAsset.local(path: _getAssetPath(2)),
-                child: const _ColoredBox(
-                    color: Color(0xFF5A9098), width: 300, height: 200)),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "SVG:",
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              SvgPicture.asset(
+                _getAssetPath(3),
+                width: 100,
+                fit: BoxFit.contain,
+              ),
+              Text(
+                "Target:",
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
+              const _ColoredBox(
+                color: Colors.orange,
+                width: 100,
+                height: 100,
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              Text(
+                "Result:",
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              SvgClip(
+                  asset: ClipAsset.local(path: _getAssetPath(3)),
+                  child: const _ColoredBox(
+                    color: Colors.orange,
+                    width: 200,
+                    height: 200,
+                  )),
+              const SizedBox(
+                height: 32,
+              ),
+              SvgClip(
+                  asset: ClipAsset.local(path: _getAssetPath(1)),
+                  child: const _ColoredBox(
+                      color: Colors.green, width: 300, height: 100)),
+              const SizedBox(
+                height: 50,
+              ),
+              SvgClip(
+                  asset: ClipAsset.local(path: _getAssetPath(2)),
+                  child: const _ColoredBox(
+                      color: Color(0xFF5A9098), width: 300, height: 200)),
+            ],
+          ),
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
