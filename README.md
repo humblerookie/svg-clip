@@ -39,7 +39,7 @@ import 'package:flutter/material.dart';
 import 'package:svg_clip/svg_clip.dart';
 
 void main() {
-  runApp(MyApp());
+    runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
