@@ -19,16 +19,20 @@ To use this library in your Flutter project, follow these steps:
      svg_clip: <latest-version>
    ```
 
+## Preview
+
+<img src="screenshots/demo1.png" width="30%"/>
+
 ## Usage
 
 ```dart
 SvgClip(
-asset: ClipAsset.local(path: "assets/images/cloud.svg"),
-child: const _ColoredBox(
-   color: Colors.green,
-   width: 300,
-   height: 100,
- ),
+   asset: ClipAsset.local(path: "assets/images/cloud.svg"),
+   child: const _ColoredBox(
+      color: Colors.green,
+      width: 300,
+      height: 100,
+   ),
 )
 ```
 
@@ -39,31 +43,31 @@ import 'package:flutter/material.dart';
 import 'package:svg_clip/svg_clip.dart';
 
 void main() {
-    runApp(MyApp());
+     runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'SVG Mask Clipper Demo',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('SVG Mask Clipper Demo'),
-        ),
-        body: Center(
-          child: SvgClip(
-            asset: ClipAsset.local(path: "assets/images/cloud.svg"),
-            child: const _ColoredBox(
-              color: Colors.green,
-              width: 300,
-              height: 100,
+   @override
+   Widget build(BuildContext context) {
+      return MaterialApp(
+         title: 'SVG Mask Clipper Demo',
+         home: Scaffold(
+            appBar: AppBar(
+               title: Text('SVG Mask Clipper Demo'),
             ),
-          ),
-        ),
-      ),
-    );
-  }
+            body: Center(
+               child: SvgClip(
+                  asset: ClipAsset.local(path: "assets/images/cloud.svg"),
+                  child: const _ColoredBox(
+                     color: Colors.green,
+                     width: 300,
+                     height: 100,
+                  ),
+               ),
+            ),
+         ),
+      );
+   }
 }
    ```
 
